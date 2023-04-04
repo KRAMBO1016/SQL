@@ -1,0 +1,48 @@
+/** Kelseys Candy Store:
+Kit Kats (25)
+Reeces (30)
+Gummy Bears (60)
+Snickers (40)
+Licorice (15)
+Herseys (30)
+Blow Pop (32)
+Butterfinger (50)
+Skittles (30)
+Starburst (40)
+Mentos (25)
+Sweedish Fish (40)
+Sour Patch Kids (40)
+Twix (30)
+Nerds Rope (34)
+**/
+
+CREATE TABLE Kelseys_Candy_Store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, price INTEGER, Expiration_year NUMERIC);
+
+INSERT INTO Kelseys_Candy_Store VALUES (1, "Kit Kats", 25, 1, 1.5, 2023);
+INSERT INTO Kelseys_Candy_Store VALUES (2, "Reeces", 30, 1, 1.5, 2023);
+INSERT INTO Kelseys_Candy_Store VALUES (3, "Gummy Bears", 60, 2, 2.5, 2027);
+INSERT INTO Kelseys_Candy_Store VALUES (4, "Snickers", 40, 1, 1.5, 2024);
+INSERT INTO Kelseys_Candy_Store VALUES (5, "Licorice", 15, 2, 1.0, 2026);
+INSERT INTO Kelseys_Candy_Store VALUES (6, "Herseys", 30, 1, 1.5, 2023);
+INSERT INTO Kelseys_Candy_Store VALUES (7, "Blow Pop", 32, 4, 0.50, 2025);
+INSERT INTO Kelseys_Candy_Store VALUES (8, "Butterfinger", 50, 1, 1.50, 2026);
+INSERT INTO Kelseys_Candy_Store VALUES (9, "Skittles", 30, 2, 2.0, 2025);
+INSERT INTO Kelseys_Candy_Store VALUES (10, "Starburst", 40, 2, 2.0, 2024);
+INSERT INTO Kelseys_Candy_Store VALUES (11, "Mentos", 25, 4, 1.0, 2030);
+INSERT INTO Kelseys_Candy_Store VALUES (12, "Sweedish Fish", 40, 2, 2.0, 2026);
+INSERT INTO Kelseys_Candy_Store VALUES (13, "Sour Patch Kids", 40, 2, 2.0, 2026);
+INSERT INTO Kelseys_Candy_Store VALUES (14, "Twix", 30, 1, 1.50, 2023);
+INSERT INTO Kelseys_Candy_Store VALUES (15, "Nerds Rope", 34, 2, 1.50, 2026);
+
+SELECT * FROM Kelseys_Candy_Store;
+
+SELECT * FROM Kelseys_Candy_Store ORDER BY price;
+
+SELECT * FROM Kelseys_Candy_Store WHERE aisle =1;
+
+SELECT * FROM Kelseys_Candy_Store WHERE quantity > 40;
+
+
+
+
+

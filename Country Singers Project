@@ -1,0 +1,56 @@
+CREATE TABLE country_singers 
+	    (id INTEGER primary key,
+	    full_name TEXT,
+ 		fav_song TEXT,
+		marital_status TEXT,
+		home_town TEXT,
+		home_state TEXT,
+		home_country TEXT,
+		records_sold INTEGER,
+		gender TEXT,
+		children TEXT,
+		favorite_candy TEXT,
+		favorite_color TEXT);
+		
+INSERT INTO country_singers VALUES (1, "Morgan Wallen", "Quittin Time", "Single", "Sneedville", "Tennessee", "USA", 6000000, "Male", 1, "Kit-Kat", "Orange");
+INSERT INTO country_singers VALUES (2, "Luke Combs", "Nothin' Like You", "Married", "Charlotte", "North_Carolina", "USA", 7000000, "Male", 1, "Snickers", "Green");
+INSERT INTO country_singers VALUES (3, "Kelsea Ballerini", "Love is a Cowboy", "Dating", "Knoxville", "Tennessee","USA", 2000000, "Female", 0, "Sour Patch Kids", "Yellow" );
+INSERT INTO country_singers VALUES (4, "Shania Twain", "You're Still the One", "Single", "Windsor", "Ontario", "Canada", 100000000, "Female", 2, "Sweedish Fish", "Pink");
+INSERT INTO country_singers VALUES (5, "HARDY", "SOLD OUT", "Married", "Philadelphia", "Mississipi", "USA", 20000, "Male", 0, "Snickers", "Black");
+INSERT INTO country_singers VALUES (6, "Carrie Underwood", "American Girl", "Married", "Checottah", "Oklahoma", "USA", 16000000, "Female", 2, "Licorice", "Pink");
+INSERT INTO country_singers VALUES (7, "Blake Shelton", "I Lived It", "Married", "Ada", "Oklahoma", "USA", 52000000, "Male", 3, "Twix", "Blue");
+INSERT INTO country_singers VALUES (8,"Jason Aldean", "Any Ole Barstool", "Married", "Macon", "Georgia", "USA", 20000000, "Male", 4, "Reeces", "Brown");
+
+
+CREATE TABLE country_album
+   (id INTEGER primary key,
+    title TEXT,
+    songs INTEGER);
+    
+INSERT INTO country_album VALUES (1,"Dangerous", 30);
+   INSERT INTO country_album  VALUES (2, "Gettin Old", 18);
+    INSERT INTO country_album VALUES (3, "Subject to Change", 15);
+   INSERT INTO country_album  VALUES (4, "UP!", 19);
+    INSERT INTO country_album VALUES (5, "The Mockingbird & The Crow", 17);
+    INSERT INTO country_album VALUES (6, "Some Hearts", 14);
+   INSERT INTO country_album  VALUES (7, "Texoma Shore", 11);
+   INSERT INTO country_album  VALUES (8, "They Don't Know", 15);
+
+/* SELF JOIN */
+SELECT country_singers.full_name, country_album.title
+FROM country_singers
+JOIN country_album
+ON country_singers.id = country_album.id;
+
+SELECT full_name FROM country_singers
+GROUP BY full_name HAVING home_state = "Tennessee";
+
+SELECT country_singers.full_name, country_singers.marital_status
+FROM country_singers
+GROUP BY full_name HAVING marital_status = "Married";
+
+SELECT country_singers.full_name, MAX(records_sold)
+FROM country_singers;
+
+SELECT country_singers.full_name, MIN(records_sold)
+FROM country_singers;
